@@ -48,7 +48,7 @@ if __name__ == "__main__":
     n = 2000
     k = 10
     alpha = 0.8
-    adv = 0 # 0.17
-    rounds = 50
+    adv = 0.17
+    rounds = 500
     rounds = main(n, k, alpha, adv, rounds)
-    plot(rounds, [], "Slush without adversaries. n={0}; k={1}; alpha={2}; adversaries={3}; ".format(n, k, alpha, adv), "/tmp/honest_slush.gif")
+    plot(rounds, [0.5 - adv, 0.5 + adv], "Slush. n={0}; k={1}; alpha={2}; adversaries={3}; ".format(n, k, alpha, adv), "/tmp/slush.gif")

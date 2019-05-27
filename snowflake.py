@@ -66,5 +66,5 @@ if __name__ == "__main__":
     adv = 0.17
     rounds = 500
     rounds = main(n, k, alpha, beta, adv, rounds)
-    plot(rounds, "Snowflake. n={0}; k={1}; alpha={2}; beta={3}; adversaries={4}; ".format(n, k, alpha, beta, adv),
+    plot(rounds, [0.5 - adv, 0.5 + adv], "Snowflake. n={0}; k={1}; alpha={2}; beta={3}; adversaries={4}; ".format(n, k, alpha, beta, adv),
          "/tmp/snowflake.gif")
