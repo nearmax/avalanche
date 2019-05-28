@@ -13,6 +13,7 @@ def main(n, k, alpha, beta, adv, rounds):
     d = []
     lastcol = []
     honest = math.floor(n * (1.0 - adv))
+    initial_colors = []
 
     def total_blues():
         return sum(colors)
@@ -24,12 +25,14 @@ def main(n, k, alpha, beta, adv, rounds):
         if responder_ind < honest:
             return colors[responder_ind]
         # Adversarial case
-        return requester_ind % 2
+        return initial_colors[requester_ind]
 
     for i in range(honest):
         # Initialize with 50/50 split.
-        colors.append(i % 2)
-        lastcol.append(i % 2)
+        color = random.randint(0, 1)
+        colors.append(color)
+        lastcol.append(color)
+        initial_colors.append(color)
         decided.append(False)
         cnt.append(0)
         d.append([0, 0])
